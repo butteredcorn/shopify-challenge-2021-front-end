@@ -36,7 +36,7 @@ const MovieDetails = () => {
     }
 
     const removeNomination = (id) => {
-        const updatedNominations = nominations.filter(n => n.imdbID != id)
+        const updatedNominations = nominations.filter(n => n.imdbID !== id)
         setNominations(updatedNominations)
         localStorage.setItem("nominations", JSON.stringify(updatedNominations))
     }

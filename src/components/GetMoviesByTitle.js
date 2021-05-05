@@ -28,7 +28,7 @@ const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}
                 )}
                 </ul>
             </div>}
-            {data && data.length == 0 && <div>
+            {data && data.length === 0 && <div>
                 <h3 className="heading">Results</h3>
                 <p>Movie results will show here after you search.</p>
             </div>}

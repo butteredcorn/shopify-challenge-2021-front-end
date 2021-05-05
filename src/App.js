@@ -2,10 +2,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@ap
 import { onError } from '@apollo/client/link/error'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
-import ThemeProvider from './components/ThemeProvider'
+import ThemesProvider from './components/ThemeProvider'
 import './styles/App.css';
-
-import { graphql } from 'graphql';
 
 import Home from './views/Home'
 import MovieDetails from './views/MovieDetails'
@@ -15,6 +13,7 @@ const errorLink = onError(({graphqlErrors, networkError}) => {
   if (graphqlErrors) {
     graphqlErrors.map(({message, location, path}) => {
       console.log(`GraphQL error: ${message} at ${location} with ${path}.`)
+      return message;
     })
   }
 })
@@ -31,7 +30,7 @@ const AppContainer = styled.div`
 function App({props}) {
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider>
+      <ThemesProvider>
         <AppContainer className="App" {...props}>
           <BrowserRouter>
             <Switch>
@@ -41,7 +40,7 @@ function App({props}) {
             </Switch>
           </BrowserRouter>
         </AppContainer>
-      </ThemeProvider>
+      </ThemesProvider>
     </ApolloProvider>
   );
 }

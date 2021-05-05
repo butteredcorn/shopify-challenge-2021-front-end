@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components'
@@ -26,7 +25,7 @@ const NominationsList = ({loading, error, data, remove}) => {
                     <li className="nomination" key={nomination.imdbID}><span>{nomination.Title}</span> <span>({nomination.Year})</span> <span><button onClick={() => remove(nomination.imdbID)}>Remove</button></span><span><button><Link to={{pathname: "/movie", state: {id: nomination.imdbID}}}>View Details</Link></button></span></li>
                     )}
                 </ul>}
-                {data && data.length == 0 &&
+                {data && data.length === 0 &&
                 <p>No Nominations Yet! Nominate some movies to get started.</p>}
             </div>
         </NominationsContainer>

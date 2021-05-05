@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components"
 
 export const ThemeContext = createContext();
 
-export default ({ children }) => {
+export default function ThemesProvider ({ children }) {
     const value = lightTheme;
-    const initialState = {currentTheme: value == darkTheme ? darkTheme : lightTheme}
+    const initialState = {currentTheme: value === darkTheme ? darkTheme : lightTheme}
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const {currentTheme} = state;
