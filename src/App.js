@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -32,14 +33,37 @@ const AppContainer = styled.div`
 `
 
 function App({props}) {
+  const [nominations, setNominations] = useState([])
+
+  const addNomination = (nomination, err, setErr)  => {
+    if (err) setErr(null)
+    if (nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS) return setErr(new Error(`You can only nominate ${process.env.REACT_APP_MAX_NOMINATIOINS} movies.`))
+    if (nominations && nominations.filter(n => n.imdbID === nomination.imdbID).length > 0) return;
+    const updatedNominations = [...nominations, nomination]
+    setNominations(updatedNominations)
+    localStorage.setItem("nominations", JSON.stringify(updatedNominations))
+  }
+
+  const removeNomination = (id, err, setErr) => {
+    if (err) setErr(null)
+    const updatedNominations = nominations.filter(n => n.imdbID !== id)
+    setNominations(updatedNominations)
+    localStorage.setItem("nominations", JSON.stringify(updatedNominations))
+  }
+
+  useEffect(() => {
+    const nominations = JSON.parse(localStorage.getItem("nominations"))
+    setNominations(nominations)
+}, [])
+
   return (
     <ApolloProvider client={client}>
       <ThemesProvider>
         <AppContainer className="App" {...props}>
           <BrowserRouter>
             <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/movie" component={MovieDetails}/>
+              <Route path="/" exact render={(props) => (<Home {...props} nominations={nominations} setNominations={setNominations} addNomination={addNomination} removeNomination={removeNomination} />)}/>
+              <Route path="/movie" render={(props) => (<MovieDetails {...props} nominations={nominations} setNominations={setNominations} addNomination={addNomination} removeNomination={removeNomination} />)}/>
               <Route component={NotFound}/>
             </Switch>
           </BrowserRouter>

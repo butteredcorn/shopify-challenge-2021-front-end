@@ -12,7 +12,7 @@ const NominationsContainer = styled.div`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const NominationsList = ({loading, error, data, remove}) => {
+const NominationsList = ({loading, error, setError, data, remove}) => {
 
 
     if (loading) return null;
@@ -35,7 +35,7 @@ const NominationsList = ({loading, error, data, remove}) => {
                 {data && data.length > 0 && 
                 <ul className="nominations">
                     {data.map((nomination) => 
-                    <li className="nomination" key={nomination.imdbID}><Link to={{pathname: "/movie", state: {id: nomination.imdbID}}}>{nomination.Title}</Link> <span>({nomination.Year})</span> <span><button onClick={() => remove(nomination.imdbID)}>Remove</button></span></li>
+                    <li className="nomination" key={nomination.imdbID}><Link to={{pathname: "/movie", state: {id: nomination.imdbID}}}>{nomination.Title}</Link> <span>({nomination.Year})</span> <span><button onClick={() => remove(nomination.imdbID, error, setError)}>Remove</button></span></li>
                     )}
                 </ul>}
                 {data && data.length === 0 &&

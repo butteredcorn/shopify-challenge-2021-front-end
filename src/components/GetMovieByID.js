@@ -11,7 +11,7 @@ const MovieContainer = styled.div`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
+const GetMoviesByID = ({error, setError, loading, movie, nominate, remove}) => {
     const [nominated, setNominated] = useState(false)
 
     useEffect(() => {
@@ -57,11 +57,11 @@ const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
                         <span><strong>Metascore:</strong> {movie.Metascore}</span>
                         <span><strong>IMDB Rating:</strong> {movie.imdbRating}</span>
                         {!nominated && <span><button onClick={() => { 
-                            nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID}) 
+                            nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID}, error, setError) 
                             setNominated(true)
                         }}>Nominate</button></span>}
                         {nominated && <span><button onClick={() => { 
-                            remove(movie.imdbID) 
+                            remove(movie.imdbID, error, setError) 
                             setNominated(false)
                         }}>Remove</button></span>}
                     </div>

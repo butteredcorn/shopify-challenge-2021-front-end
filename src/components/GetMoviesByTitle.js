@@ -10,7 +10,7 @@ const MoviesContainer = styled.div`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}) => {
+const GetMoviesByTitle = ({keyword, loading, error, setError, data, nominate, nominations}) => {
 
     const nominated = (id) => {
         const nomination = nominations.filter(n => n.imdbID === id)
@@ -37,7 +37,7 @@ const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}
                 {data.length > 1 ? <h3 className="heading">{data.length} Results for "{keyword}"</h3> : <h3 className="heading">{data.length} Result for "{keyword}"</h3>}
                 <ul className="movies">
                 {data.map((movie) => 
-                    <li className="movie" key={movie.imdbID}><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>{movie.Title}</Link> <span>({movie.Year})</span> <span>{movie.imdbID && !nominated(movie.imdbID) && <button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID})}>Nominate</button>}</span></li>
+                    <li className="movie" key={movie.imdbID}><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>{movie.Title}</Link> <span>({movie.Year})</span> <span>{movie.imdbID && !nominated(movie.imdbID) && <button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID}, error, setError)}>Nominate</button>}</span></li>
                 )}
                 </ul>
             </div>}

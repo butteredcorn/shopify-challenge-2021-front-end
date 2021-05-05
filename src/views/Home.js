@@ -23,11 +23,10 @@ const MainSection = styled.section`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const Home = () => {
+const Home = ({nominations, addNomination, removeNomination}) => {
     const [input, setInput] = useState({keyword: "", searchTerm: ""})
     const [getMoviesByTitle, { error, loading, data }] = useLazyQuery(GET_MOVIES_BY_TITLE);    
     const [movies, setMovies] = useState([])
-    const [nominations, setNominations] = useState([])
     const [err, setErr] = useState(null)
 
     const handleUserInput = (e) => {
@@ -42,22 +41,6 @@ const Home = () => {
         } 
     }
 
-    const addNomination = (nomination)  => {
-        if (err) setErr(null)
-        if (nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS) return setErr(new Error(`You can only nominate ${process.env.REACT_APP_MAX_NOMINATIOINS} movies.`))
-        if (nominations && nominations.filter(n => n.imdbID === nomination.imdbID).length > 0) return;
-        const updatedNominations = [...nominations, nomination]
-        setNominations(updatedNominations)
-        localStorage.setItem("nominations", JSON.stringify(updatedNominations))
-    }
-
-    const removeNomination = (id) => {
-        if (err) setErr(null)
-        const updatedNominations = nominations.filter(n => n.imdbID !== id)
-        setNominations(updatedNominations)
-        localStorage.setItem("nominations", JSON.stringify(updatedNominations))
-    }
-
     useEffect(() => {
         if (data && data.searchByTitle && data.searchByTitle.Search) {
             console.log(data.searchByTitle.Search)
@@ -70,20 +53,14 @@ const Home = () => {
         if (error) setErr(error)
     }, [error, err])
 
-    useEffect(() => {
-        const nominations = JSON.parse(localStorage.getItem("nominations"))
-        console.log(nominations.length)
-        setNominations(nominations)
-    }, [])
-
     return (
         <HomeContainer className="home-container">
             <MainHeader/>
             {nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS && <FinishedBanner/>}
             <SearchBar input={input.keyword} setInput={handleUserInput} handleEvent={handleEvent}/>
             <MainSection className="main-section">
-                <GetMoviesByTitle keyword={input.searchTerm} loading={loading} error={err} data={movies} nominate={addNomination} nominations={nominations}/>
-                <NominationsList data={nominations} remove={removeNomination}/>
+                <GetMoviesByTitle keyword={input.searchTerm} loading={loading} error={err} setError={setErr} data={movies} nominate={addNomination} nominations={nominations}/>
+                <NominationsList data={nominations} remove={removeNomination} error={err} setError={setErr} />
             </MainSection>
         </HomeContainer>
     );
