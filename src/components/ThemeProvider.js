@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components"
 export const ThemeContext = createContext();
 
 export default function ThemesProvider ({ children }) {
-    const value = lightTheme;
+    const value = lightTheme; //could read from cookie/storage/or OS preferences with useDarkMode hook
     const initialState = {currentTheme: value === darkTheme ? darkTheme : lightTheme}
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -21,15 +21,7 @@ export default function ThemesProvider ({ children }) {
 }
 
 export function reducer(state, action) {
-    switch(action.type) {
-        // case "setTheme":
-        //     return {...state, currentTheme: action.value};
-        // case "updateTheme":
-        //     return {
-        //         ...state,
-        //         currentTheme: { ...theme[state.currentTheme], ...action.value }
-        //     };
-            
+    switch(action.type) {            
         case "toggleTheme": {
             const newTheme = state.currentTheme.id === "light" ? darkTheme : lightTheme
             return { ...state, currentTheme: newTheme};

@@ -30,14 +30,6 @@ const Home = () => {
     const [nominations, setNominations] = useState([])
     const [err, setErr] = useState(null)
 
-    useEffect(() => {
-        if (data && data.searchByTitle && data.searchByTitle.Search) {
-            console.log(data.searchByTitle.Search)
-            //note: if no match is found for keyword, server will throw error
-            return setMovies(data.searchByTitle.Search)
-        }
-    }, [data])
-
     const handleUserInput = (e) => {
         setInput({...input, [e.target.name]: e.target.value})
     }
@@ -65,6 +57,14 @@ const Home = () => {
         setNominations(updatedNominations)
         localStorage.setItem("nominations", JSON.stringify(updatedNominations))
     }
+
+    useEffect(() => {
+        if (data && data.searchByTitle && data.searchByTitle.Search) {
+            console.log(data.searchByTitle.Search)
+            //note: if no match is found for keyword, server will throw error
+            return setMovies(data.searchByTitle.Search)
+        }
+    }, [data])
 
     useEffect(() => {
         if (error) setErr(error)

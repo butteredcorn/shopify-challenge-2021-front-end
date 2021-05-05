@@ -25,7 +25,7 @@ const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
         }
     }, [movie.imdbID])
 
-    if (loading) return null;
+    if (loading) return <MovieContainer className="container"><p>Loading ...</p></MovieContainer>;;
     if (error) {
         console.log(error.message)
         return (
@@ -47,6 +47,7 @@ const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
                         <img className="poster" src={movie.Poster} alt="movie poster"/>
                     </div>
                     <div className="movie-details">
+                        {/* could put the following into an array of objects and map through them */}
                         <span><strong>Genre:</strong> {movie.Genre}</span>
                         <span><strong>Rated:</strong> {movie.Rated}</span>
                         <span><strong>Runtime:</strong> {movie.Runtime}</span>

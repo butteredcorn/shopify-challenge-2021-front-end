@@ -18,7 +18,7 @@ const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}
         return false
     }
 
-    if (loading) return null;
+    if (loading) return <MoviesContainer className="container"><p>Loading ...</p></MoviesContainer>;
     if (error) {
         console.log(error.message)
         return (
