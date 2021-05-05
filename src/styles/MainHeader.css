@@ -12,3 +12,7 @@
     font-weight: bold;
     margin: 1rem;
   }
+
+.nav-link {
+    text-decoration: none;
+}

@@ -1,12 +1,15 @@
-import styled from 'styled-components'
 import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import styled from 'styled-components'
 import ThemeProvider from './components/ThemeProvider'
 import './styles/App.css';
 
 import { graphql } from 'graphql';
 
-import Home from "./views/Home"
+import Home from './views/Home'
+import MovieDetails from './views/MovieDetails'
+import NotFound from './views/NotFound'
 
 const errorLink = onError(({graphqlErrors, networkError}) => {
   if (graphqlErrors) {
@@ -30,7 +33,13 @@ function App({props}) {
     <ApolloProvider client={client}>
       <ThemeProvider>
         <AppContainer className="App" {...props}>
-          <Home/>
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" exact component={Home}/>
+              <Route path="/movie" component={MovieDetails}/>
+              <Route component={NotFound}/>
+            </Switch>
+          </BrowserRouter>
         </AppContainer>
       </ThemeProvider>
     </ApolloProvider>

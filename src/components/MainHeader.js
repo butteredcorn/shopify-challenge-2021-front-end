@@ -1,15 +1,16 @@
 import {useContext} from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from "./ThemeProvider"
-import '../styles/HomeHeader.css'
+import { Link } from 'react-router-dom';
+import '../styles/MainHeader.css'
 
-const HomeHeaderContainer = styled.section`
+const MainHeaderContainer = styled.section`
     background-color: ${props => props.theme.bg.primary};
     color: ${props => props.theme.text.tertiary};
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const HomeHeader = () => {
+const MainHeader = () => {
     const { currentTheme, dispatch } = useContext(ThemeContext);
 
     const toggleTheme = () => {
@@ -17,12 +18,12 @@ const HomeHeader = () => {
     };
 
     return (
-        <HomeHeaderContainer>
+        <MainHeaderContainer>
             <header className="home-header">
-                <h1>The Shoppies</h1>
+                <h1><Link to="/" className="nav-link">The Shoppies</Link></h1>
                 <p className="toggle" onClick={toggleTheme}>{currentTheme.id} Theme</p>
             </header>
-        </HomeHeaderContainer>
+        </MainHeaderContainer>
     );
   };
-  export default HomeHeader;
+  export default MainHeader;

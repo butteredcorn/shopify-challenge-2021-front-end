@@ -14,3 +14,22 @@ export const GET_MOVIES_BY_TITLE = gql`
             }
     }
 `
+
+export const GET_MOVIE_BY_ID = gql`
+    query movieByID($id: String!) {
+        movieByID(id: $id) {
+            Title
+            Year
+            Genre
+            Poster
+            Rated
+            Runtime
+            Director
+            Actors
+            Language
+            Metascore
+            imdbRating
+            imdbID
+        }
+    }
+`

@@ -1,0 +1,18 @@
+.movie-details-container {
+    width: 90%;
+    max-width: 1200px; 
+}
+
+.movie-details-container > * {
+    margin: 1rem;
+}
+
+.main-section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-section > * {
+    margin: 1rem;
+    width: 100%;
+}

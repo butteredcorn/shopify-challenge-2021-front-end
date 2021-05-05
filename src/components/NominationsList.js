@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components'
 
 import '../styles/NominationsList.css'
@@ -9,7 +11,7 @@ const NominationsContainer = styled.div`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const NominationsList = ({loading, error, data}) => {
+const NominationsList = ({loading, error, data, remove}) => {
 
     if (loading) return null;
     if (error) return `${error}.`;
@@ -21,7 +23,7 @@ const NominationsList = ({loading, error, data}) => {
                 {data && data.length > 0 && 
                 <ul className="nominations">
                     {data.map((nomination) => 
-                    <li className="nomination" key={nomination.imdbID}><span>{nomination.Title}</span> <span>({nomination.Year})</span> <span><button>Remove</button></span></li>
+                    <li className="nomination" key={nomination.imdbID}><span>{nomination.Title}</span> <span>({nomination.Year})</span> <span><button onClick={() => remove(nomination.imdbID)}>Remove</button></span><span><button><Link to={{pathname: "/movie", state: {id: nomination.imdbID}}}>View Details</Link></button></span></li>
                     )}
                 </ul>}
                 {data && data.length == 0 &&

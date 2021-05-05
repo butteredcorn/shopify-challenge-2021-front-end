@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import '../styles/GetMoviesByTitle.css'
 import styled from 'styled-components'
 
@@ -23,7 +24,7 @@ const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}
                 <h3 className="heading">Results for "{keyword}"</h3>
                 <ul className="movies">
                 {data.map((movie) => 
-                    <li className="movie" key={movie.imdbID}><span>{movie.Title}</span> <span>({movie.Year})</span> <span><button onClick={() => nominate([...nominations, movie])}>Nominate</button></span> <span><button>View Details</button></span></li>
+                    <li className="movie" key={movie.imdbID}><span>{movie.Title}</span> <span>({movie.Year})</span> <span><button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID})}>Nominate</button></span> <span><button><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>View Details</Link></button></span></li>
                 )}
                 </ul>
             </div>}
