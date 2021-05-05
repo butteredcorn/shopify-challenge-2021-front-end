@@ -12,15 +12,15 @@ const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
     const [nominated, setNominated] = useState(false)
 
     useEffect(() => {
-        const nomination = JSON.parse(localStorage.getItem("nominations")).filter(n => n.imdbID == movie.imdbID)
-        if (nomination.length > 0) {
-            setNominated(true)
-            console.log(nominated)
-        } else {
-            setNominated(false)
-            console.log(nominated)
+        if (movie.imdbID) {
+            const nomination = JSON.parse(localStorage.getItem("nominations")).filter(n => n.imdbID === movie.imdbID)
+            if (nomination.length > 0) {
+                setNominated(true)
+            } else {
+                setNominated(false)
+            }
         }
-    }, [nominated])
+    }, [movie.imdbID])
 
     if (loading) return null;
     if (error) return `${error}.`;
