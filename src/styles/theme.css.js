@@ -24,6 +24,9 @@ const light = {
     },
     bgImages: {
 
+    },
+    error: {
+      primary: "red"
     }
   }
   
@@ -53,6 +56,9 @@ const light = {
     },
     bgImages: {
 
+    },
+    error: {
+      primary: "red"
     }
   }
   

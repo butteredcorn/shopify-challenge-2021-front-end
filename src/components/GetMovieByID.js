@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import '../styles/GetMovieByID.css'
 import styled from 'styled-components'
+
+import '../styles/GetMovieByID.css'
+
+import Error from './Error'
 
 const MovieContainer = styled.div`
     background-color: ${props => props.theme.bg.secondary};
@@ -23,7 +26,16 @@ const GetMoviesByID = ({error, loading, movie, nominate, remove}) => {
     }, [movie.imdbID])
 
     if (loading) return null;
-    if (error) return `${error}.`;
+    if (error) {
+        console.log(error.message)
+        return (
+            <MovieContainer className="container">
+                <div>
+                    <Error message={error.message}/>
+                </div>
+            </MovieContainer>
+        )
+    }
 
     return (
         <MovieContainer className="container">

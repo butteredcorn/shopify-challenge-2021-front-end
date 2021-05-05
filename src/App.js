@@ -11,10 +11,14 @@ import NotFound from './views/NotFound'
 
 const errorLink = onError(({graphqlErrors, networkError}) => {
   if (graphqlErrors) {
+    console.log(graphqlErrors)
     graphqlErrors.map(({message, location, path}) => {
       console.log(`GraphQL error: ${message} at ${location} with ${path}.`)
       return message;
     })
+  }
+  if (networkError) {
+    console.log(networkError)
   }
 })
 

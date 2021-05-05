@@ -58,10 +58,6 @@ const Home = () => {
         setNominations(nominations)
     }, [])
 
-    // useEffect(() => {
-    //     localStorage.setItem("nominations", JSON.stringify(nominations))
-    // }, [nominations])
-
     return (
         <HomeContainer className="home-container">
             <MainHeader/>
