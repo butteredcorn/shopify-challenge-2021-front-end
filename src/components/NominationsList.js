@@ -24,6 +24,8 @@ const NominationsList = ({loading, error, data}) => {
                     <li className="nomination" key={nomination.imdbID}><span>{nomination.Title}</span> <span>({nomination.Year})</span> <span><button>Remove</button></span></li>
                     )}
                 </ul>}
+                {data && data.length == 0 &&
+                <p>No Nominations Yet! Nominate some movies to get started.</p>}
             </div>
         </NominationsContainer>
     )

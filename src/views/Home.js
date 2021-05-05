@@ -6,7 +6,8 @@ import { GET_MOVIES_BY_TITLE } from '../graphql/Queries'
 
 import '../styles/Home.css'
 
-import SearchBar from "../components/SearchBar"
+import HomeHeader from '../components/HomeHeader'
+import SearchBar from '../components/SearchBar'
 import GetMoviesByTitle from '../components/GetMoviesByTitle'
 import NominationsList from '../components/NominationsList'
 
@@ -46,11 +47,7 @@ const Home = () => {
 
     return (
         <HomeContainer className="home-container">
-            <div>
-                <header className="home-header">
-                    The Shoppies
-                </header>
-            </div>
+            <HomeHeader/>
             <SearchBar keyword={keyword} setKeyword={setKeyword} onEnter={handleEnter}/>
             <MainSection className="main-section">
                 <GetMoviesByTitle keyword={keyword} loading={loading} error={error} data={movies} nominate={setNominations} nominations={nominations}/>

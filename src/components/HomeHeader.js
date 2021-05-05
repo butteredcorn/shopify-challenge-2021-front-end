@@ -1,18 +1,28 @@
+import {useContext} from 'react'
 import styled from 'styled-components'
-import '../styles/SearchBar.css'
+import { ThemeContext } from "./ThemeProvider"
+import '../styles/HomeHeader.css'
 
-const SearchBarContainer = styled.section`
-    background-color: ${props => props.theme.bg.secondary};
+const HomeHeaderContainer = styled.section`
+    background-color: ${props => props.theme.bg.primary};
     color: ${props => props.theme.text.tertiary};
     border: 1px solid ${props => props.theme.bg.primary};
-    `
+`
 
-const SearchBar = ({keyword, setKeyword, onEnter}) => {
+const HomeHeader = () => {
+    const { currentTheme, dispatch } = useContext(ThemeContext);
+
+    const toggleTheme = () => {
+        dispatch({ type: "toggleTheme" });
+    };
+
     return (
-        <SearchBarContainer className="SearchBarContainer">
-            <p>Movie title</p>
-            <input className="SearchBar" type="text" value={keyword} onChange={(e) => setKeyword(e.target.value)} onKeyPress={(e) => onEnter(e.key)}/>
-        </SearchBarContainer>
+        <HomeHeaderContainer>
+            <header className="home-header">
+                <h1>The Shoppies</h1>
+                <p className="toggle" onClick={toggleTheme}>{currentTheme.id} Theme</p>
+            </header>
+        </HomeHeaderContainer>
     );
   };
-  export default SearchBar;
+  export default HomeHeader;

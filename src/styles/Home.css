@@ -7,16 +7,6 @@
     margin: 1rem;
 }
 
-.home-header {
-    min-height: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 1rem;
-  }
-
 .main-section {
     display: flex;
     align-items: flex-start;
@@ -24,5 +14,6 @@
 
 .main-section > * {
     margin: 1rem;
+    width: 50%;
 }
 

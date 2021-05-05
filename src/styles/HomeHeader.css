@@ -1,0 +1,14 @@
+.toggle {
+    text-transform: capitalize;
+}
+
+.home-header {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem;
+  }
