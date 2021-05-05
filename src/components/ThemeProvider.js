@@ -31,7 +31,7 @@ export function reducer(state, action) {
         //     };
             
         case "toggleTheme": {
-            const newTheme = state.currentTheme.id == "light" ? darkTheme : lightTheme
+            const newTheme = state.currentTheme.id === "light" ? darkTheme : lightTheme
             return { ...state, currentTheme: newTheme};
         }
         default:

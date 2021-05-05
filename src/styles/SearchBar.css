@@ -1,0 +1,19 @@
+.search-bar-container {
+    height: 10vh;
+    /* margin: 1rem; */
+}
+
+.search-bar-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.search-bar-title {
+    font-size: 1.5rem;
+}
+
+.search-input {
+    width: 95%;
+}
