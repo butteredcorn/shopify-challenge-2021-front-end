@@ -1,5 +1,5 @@
 .search-bar-container {
-    height: 10vh;
+    min-height: 10vh;
     /* margin: 1rem; */
 }
 
@@ -14,8 +14,22 @@
     font-size: 1.5rem;
 }
 
+.search {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.search-icon {
+    height: 28px;
+    padding: 0.2rem;
+}
+
 .search-input {
-    width: 99.5%;
-    padding-right: 0;
-    padding-left: 0;
+    width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border: none;
+    font-size: 1rem;
 }

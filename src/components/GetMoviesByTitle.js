@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import '../styles/GetMoviesByTitle.css'
 import styled from 'styled-components'
@@ -11,10 +10,15 @@ const MoviesContainer = styled.div`
     border: 1px solid ${props => props.theme.bg.primary};
 `
 
-const GetMoviesByTitle = ({keyword, loading, error, data, nominate}) => {
+const GetMoviesByTitle = ({keyword, loading, error, data, nominate, nominations}) => {
+
+    const nominated = (id) => {
+        const nomination = nominations.filter(n => n.imdbID === id)
+        if (nomination.length > 0) return true
+        return false
+    }
 
     if (loading) return null;
-
     if (error) {
         console.log(error.message)
         return (
@@ -33,7 +37,7 @@ const GetMoviesByTitle = ({keyword, loading, error, data, nominate}) => {
                 {data.length > 1 ? <h3 className="heading">{data.length} Results for "{keyword}"</h3> : <h3 className="heading">{data.length} Result for "{keyword}"</h3>}
                 <ul className="movies">
                 {data.map((movie) => 
-                    <li className="movie" key={movie.imdbID}><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>{movie.Title}</Link> <span>({movie.Year})</span> <span><button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID})}>Nominate</button></span></li>
+                    <li className="movie" key={movie.imdbID}><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>{movie.Title}</Link> <span>({movie.Year})</span> <span>{movie.imdbID && !nominated(movie.imdbID) && <button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID})}>Nominate</button>}</span></li>
                 )}
                 </ul>
             </div>}

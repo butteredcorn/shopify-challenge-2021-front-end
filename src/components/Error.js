@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-const ErrorMessage = styled.strong`
+const ErrorContainer = styled.strong`
     color: ${props => props.theme.error.primary};
 `
 const Error = ({message}) => {
     return (
-        <ErrorMessage>
+        <ErrorContainer>
             Error: {message}
-        </ErrorMessage>
+        </ErrorContainer>
     );
   };
 export default Error;
