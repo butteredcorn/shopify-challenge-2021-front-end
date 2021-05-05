@@ -35,7 +35,7 @@ const Home = ({nominations, addNomination, removeNomination}) => {
 
     const handleEvent = (e) => {
         if(err) setErr(null)
-        if (e.key && e.key === "Enter" || e.type === "click") {
+        if (e.key === "Enter" || e.type === "click") {
             setInput({...input, searchTerm: input.keyword})
             getMoviesByTitle({variables: {title: input.keyword}})
         } 

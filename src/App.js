@@ -1,31 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client'
-import { onError } from '@apollo/client/link/error'
+import React, { useState, useEffect } from 'react' 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
-import ThemesProvider from './components/ThemeProvider'
+import ApolloClientProvider from './providers/ApolloProvider'
+import ThemesProvider from './providers/ThemeProvider'
 import './styles/App.css';
 
 import Home from './views/Home'
 import MovieDetails from './views/MovieDetails'
 import NotFound from './views/NotFound'
-
-const errorLink = onError(({graphqlErrors, networkError}) => {
-  if (graphqlErrors) {
-    console.log(graphqlErrors)
-    graphqlErrors.map(({message, location, path}) => {
-      console.log(`GraphQL error: ${message} at ${location} with ${path}.`)
-      return message;
-    })
-  }
-  if (networkError) {
-    console.log(networkError)
-  }
-})
-
-const link = from([errorLink, new HttpLink({uri: process.env.REACT_APP_WEBSERVER_BASE_URL})])
-const client = new ApolloClient({cache: new InMemoryCache(), link: link})
-
 
 const AppContainer = styled.div`
   background-color: ${props => props.theme.bg.primary};
@@ -57,7 +39,7 @@ function App({props}) {
 }, [])
 
   return (
-    <ApolloProvider client={client}>
+    <ApolloClientProvider>
       <ThemesProvider>
         <AppContainer className="App" {...props}>
           <BrowserRouter>
@@ -69,7 +51,7 @@ function App({props}) {
           </BrowserRouter>
         </AppContainer>
       </ThemesProvider>
-    </ApolloProvider>
+    </ApolloClientProvider>
   );
 }
 

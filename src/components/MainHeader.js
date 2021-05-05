@@ -1,6 +1,6 @@
-import {useContext} from 'react'
+import { useContext } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from "./ThemeProvider"
+import { ThemeContext } from "../providers/ThemeProvider"
 import { Link } from 'react-router-dom';
 import '../styles/MainHeader.css'
 
