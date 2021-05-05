@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react"
-import { lightTheme, darkTheme } from '../styles/theme.css';
+import { lightTheme, darkTheme } from '../styles/common/theme.css';
 import { ThemeProvider } from "styled-components"
 
 export const ThemeContext = createContext();

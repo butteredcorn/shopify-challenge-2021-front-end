@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import '../styles/SearchBar.css'
+import '../styles/components/SearchBar.css'
 
 const SearchBarContainer = styled.section`
     background-color: ${props => props.theme.bg.primary};

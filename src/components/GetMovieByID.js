@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
-import '../styles/GetMovieByID.css'
+import '../styles/components/GetMovieByID.css'
 
 import Error from './Error'
 

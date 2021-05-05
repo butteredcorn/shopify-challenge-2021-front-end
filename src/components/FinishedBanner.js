@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import '../styles/FinishedBanner.css'
+import '../styles/components/FinishedBanner.css'
 
 const BannerContainer = styled.div`
     background-color: ${props => props.theme.bg.primary};

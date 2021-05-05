@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useQuery } from "@apollo/client"
 import { GET_MOVIE_BY_ID } from '../graphql/Queries'
 
-import '../styles/MovieDetails.css'
+import '../styles/views/MovieDetails.css'
 
 import MainHeader from '../components/MainHeader'
 import GetMoviesByID from '../components/GetMovieByID';

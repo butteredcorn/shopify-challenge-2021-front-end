@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components'
 
-import '../styles/NominationsList.css'
+import '../styles/components/NominationsList.css'
 
 import Error from './Error'
 

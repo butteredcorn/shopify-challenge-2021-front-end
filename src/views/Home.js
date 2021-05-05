@@ -4,7 +4,7 @@ import { useLazyQuery } from "@apollo/client"
 import { GET_MOVIES_BY_TITLE } from '../graphql/Queries'
 
 
-import '../styles/Home.css'
+import '../styles/views/Home.css'
 
 import MainHeader from '../components/MainHeader'
 import SearchBar from '../components/SearchBar'

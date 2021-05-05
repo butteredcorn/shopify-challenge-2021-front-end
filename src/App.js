@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import ApolloClientProvider from './providers/ApolloProvider'
 import ThemesProvider from './providers/ThemeProvider'
-import './styles/App.css';
+import './styles/components/App.css';
 
 import Home from './views/Home'
 import MovieDetails from './views/MovieDetails'

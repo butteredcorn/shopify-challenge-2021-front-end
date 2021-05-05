@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from "../providers/ThemeProvider"
 import { Link } from 'react-router-dom';
-import '../styles/MainHeader.css'
+import '../styles/components/MainHeader.css'
 
 const MainHeaderContainer = styled.section`
     background-color: ${props => props.theme.bg.primary};

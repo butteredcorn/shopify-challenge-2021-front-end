@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import '../styles/GetMoviesByTitle.css'
 import styled from 'styled-components'
+
+import '../styles/components/GetMoviesByTitle.css'
 
 import Error from './Error'
 
