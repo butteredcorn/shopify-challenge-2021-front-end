@@ -22,6 +22,11 @@
 
 @media only screen and (max-width: 600px) {
     
+    .home-header {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     .nav-link, .toggle {
         font-size: 1.8rem;
     }

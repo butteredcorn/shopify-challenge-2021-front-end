@@ -1,6 +1,5 @@
 .search-bar-container {
     min-height: 10vh;
-    /* margin: 1rem; */
 }
 
 .search-bar-inner {
@@ -33,4 +32,11 @@
     padding-left: 0.5rem;
     border: none;
     font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .search-bar-inner {
+        margin-top: 0;
+    }
 }

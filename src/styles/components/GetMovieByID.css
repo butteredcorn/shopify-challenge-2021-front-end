@@ -40,21 +40,30 @@ strong {
 }
 
 @media only screen and (max-width: 600px) {
+
+    .movie-details-container {
+        width: 100%;
+    }
     
     .poster-container {
+        display: flex;
+        justify-content: center;
         margin: 0;
+        margin-bottom: 1rem;
     }
 
     .poster {
         margin-right: 0;
-        width: 100%;
+        max-width: 100%;
     }
 
-    .movie-container {
+    .movie-detail-container {
         flex-direction: column;
     }
 
     .movie-title {
         font-size: 1.8rem;
     }
+
+   
 }

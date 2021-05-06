@@ -25,6 +25,11 @@
 
 @media only screen and (max-width: 600px) {
 
+    .movies-container {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     .movies {
         list-style: none;
     }
