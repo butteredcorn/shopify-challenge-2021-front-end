@@ -20,7 +20,8 @@ const light = {
       primary: '#ffffff' 
     },
     dropShadow: {
-      primary: '#bbb2e9' //maximum blue purple
+      primary: '#bbb2e9', //maximum blue purple
+      secondary: "#D9DCE7"
     },
     accent: {
       primary: "#1477AE"
@@ -35,7 +36,7 @@ const light = {
     bg: {
       primary: '#050505',
       secondary: '#474747',
-      tertiary: "#988ADE",
+      tertiary: "#5C5C5C",
     },
     text: {
       primary: '#fbfbfc',
@@ -54,8 +55,8 @@ const light = {
     dropShadow: {
       primary: '#663399'
     },
-    bgImages: {
-
+    accent: {
+      primary: "#988ADE"
     },
     error: {
       primary: "red"
