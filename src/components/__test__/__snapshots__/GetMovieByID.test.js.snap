@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a loading snapshot 1`] = `
+<div
+  className="sc-gsDJrp dbPJRZ movie-container"
+>
+  <p>
+    Loading ...
+  </p>
+</div>
+`;
+
+exports[`matches a snapshot 1`] = `
+<div
+  className="sc-gsDJrp dbPJRZ movie-container"
+>
+  <div>
+    <h2
+      className="sc-dkPtyc iJlIGG movie-title"
+    >
+      Shopify Challenge
+       (
+      2021
+      )
+    </h2>
+    <div
+      className="movie-detail-container"
+    >
+      <div
+        className="poster-container"
+      >
+        <img
+          alt="movie poster"
+          className="poster"
+        />
+      </div>
+      <div
+        className="movie-details"
+      >
+        <span>
+          <strong>
+            Genre:
+          </strong>
+           
+          Front End Developement
+        </span>
+        <span>
+          <strong>
+            Rated:
+          </strong>
+           
+          E for Everyone
+        </span>
+        <span>
+          <strong>
+            Runtime:
+          </strong>
+           
+          Life long journey
+        </span>
+        <span>
+          <strong>
+            Director:
+          </strong>
+           
+          Justin Yee
+        </span>
+        <span>
+          <strong>
+            Actors:
+          </strong>
+           
+          Justin Yee
+        </span>
+        <span>
+          <strong>
+            Language:
+          </strong>
+           
+          Javascript, React, React Native, Node, C#, PHP, Python, Java, and more.
+        </span>
+        <span>
+          <strong>
+            Metascore:
+          </strong>
+           
+          96
+        </span>
+        <span>
+          <strong>
+            IMDB Rating:
+          </strong>
+           
+          9.6/10
+        </span>
+        <span>
+          <button
+            onClick={[Function]}
+          >
+            Nominate
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

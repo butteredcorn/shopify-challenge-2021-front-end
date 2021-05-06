@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a snapshot 1`] = `
+<div
+  className="not-found"
+>
+  <h1>
+    404 - Not Found!
+  </h1>
+  <a
+    className="home-link"
+    href="/"
+    onClick={[Function]}
+  >
+    Go Home
+  </a>
+</div>
+`;

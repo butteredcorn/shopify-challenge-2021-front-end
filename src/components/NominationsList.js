@@ -18,7 +18,6 @@ const SubHeader = styled.h3`
 
 const NominationsList = ({loading, error, setError, data, remove}) => {
 
-
     if (loading) return null;
     if (error) {
         console.log(error.message)

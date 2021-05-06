@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a loading snapshot 1`] = `
+<div
+  className="sc-gsDJrp dbPJRZ movies-container"
+>
+  <p>
+    Loading ...
+  </p>
+</div>
+`;
+
+exports[`matches a snapshot 1`] = `
+<div
+  className="sc-gsDJrp dbPJRZ movies-container"
+>
+  <div
+    className="movies-container-inner"
+  >
+    <h3
+      className="sc-dkPtyc iJlIGG heading"
+    >
+      2
+       Results for "
+      "
+    </h3>
+    <ul
+      className="movies"
+    >
+      <li
+        className="movie"
+      >
+        <a
+          href="/movie"
+          onClick={[Function]}
+        >
+          Shopify Challenge - Front End Developer!
+        </a>
+         
+        <span>
+          (
+          2021
+          )
+        </span>
+         
+        <span />
+      </li>
+      <li
+        className="movie"
+      >
+        <a
+          href="/movie"
+          onClick={[Function]}
+        >
+          Hello World!
+        </a>
+         
+        <span>
+          (
+          2021
+          )
+        </span>
+         
+        <span>
+          <button
+            onClick={[Function]}
+          >
+            Nominate
+          </button>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

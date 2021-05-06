@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a snapshot 1`] = `
+<section
+  className="sc-iqsfdx fPGZVg home-container"
+>
+  <section
+    className="sc-bdvvaa cuEABP"
+  >
+    <header
+      className="home-header"
+    >
+      <h1>
+        <a
+          className="nav-link"
+          href="/"
+          onClick={[Function]}
+        >
+          The Shoppies
+        </a>
+      </h1>
+      <p
+        className="toggle"
+        onClick={[Function]}
+      >
+        light
+         Theme
+      </p>
+    </header>
+  </section>
+  <section
+    className="sc-gsDJrp cGoqlV search-bar-container"
+  >
+    <section
+      className="sc-dkPtyc hBdwQl search-bar-inner"
+    >
+      <label
+        className="sc-eCImvq iMoTva search-bar-title"
+      >
+        Movie title
+      </label>
+      <span
+        className="sc-hKwCoD kWunAK search"
+      >
+        <img
+          alt="search icon"
+          className="search-icon"
+          onClick={[Function]}
+          src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_search-64.png"
+        />
+        <input
+          className="search-input"
+          name="keyword"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          type="text"
+          value=""
+        />
+      </span>
+    </section>
+  </section>
+  <section
+    className="sc-crHlIS dShgku home-main-section"
+  >
+    <div
+      className="sc-gKckTs imZtZy movies-container"
+    >
+      <div>
+        <h3
+          className="sc-iCfLBT dpfegV heading"
+        >
+          Results
+        </h3>
+        <p>
+          Movie results will show here after you search.
+        </p>
+      </div>
+    </div>
+    <div
+      className="sc-furvIG lcAKQw nominations-container"
+    >
+      <h3
+        className="sc-pVTma jKyYsN heading"
+      >
+        Nominations
+      </h3>
+      <ul
+        className="nominations"
+      >
+        <li
+          className="nomination"
+        >
+          <a
+            href="/movie"
+            onClick={[Function]}
+          >
+            Shopify Challenge - Front End Developer!
+          </a>
+           
+          <span>
+            (
+            2021
+            )
+          </span>
+           
+          <span>
+            <button
+              onClick={[Function]}
+            >
+              Remove
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+`;

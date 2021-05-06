@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a snapshot 1`] = `
+<section
+  className="sc-bdvvaa cuEABP"
+>
+  <header
+    className="home-header"
+  >
+    <h1>
+      <a
+        className="nav-link"
+        href="/"
+        onClick={[Function]}
+      >
+        The Shoppies
+      </a>
+    </h1>
+    <p
+      className="toggle"
+      onClick={[Function]}
+    >
+      light
+       Theme
+    </p>
+  </header>
+</section>
+`;

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a snapshot 1`] = `
+<div
+  className="sc-gsDJrp dbPJRZ nominations-container"
+>
+  <h3
+    className="sc-dkPtyc iJlIGG heading"
+  >
+    Nominations
+  </h3>
+  <ul
+    className="nominations"
+  >
+    <li
+      className="nomination"
+    >
+      <a
+        href="/movie"
+        onClick={[Function]}
+      >
+        Shopify Challenge - Front End Developer!
+      </a>
+       
+      <span>
+        (
+        2021
+        )
+      </span>
+       
+      <span>
+        <button
+          onClick={[Function]}
+        >
+          Remove
+        </button>
+      </span>
+    </li>
+    <li
+      className="nomination"
+    >
+      <a
+        href="/movie"
+        onClick={[Function]}
+      >
+        Hello World!
+      </a>
+       
+      <span>
+        (
+        2021
+        )
+      </span>
+       
+      <span>
+        <button
+          onClick={[Function]}
+        >
+          Remove
+        </button>
+      </span>
+    </li>
+  </ul>
+</div>
+`;

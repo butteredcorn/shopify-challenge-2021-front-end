@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches a snapshot 1`] = `
+<section
+  className="sc-bdvvaa ktWoHH search-bar-container"
+>
+  <section
+    className="sc-gsDJrp eZjVwY search-bar-inner"
+  >
+    <label
+      className="sc-hKwCoD eqUIOT search-bar-title"
+    >
+      Movie title
+    </label>
+    <span
+      className="sc-dkPtyc hboLrn search"
+    >
+      <img
+        alt="search icon"
+        className="search-icon"
+        src="https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_search-64.png"
+      />
+      <input
+        className="search-input"
+        name="keyword"
+        type="text"
+      />
+    </span>
+  </section>
+</section>
+`;
