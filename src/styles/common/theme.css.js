@@ -3,7 +3,7 @@ const light = {
     bg: {
       primary: '#eff0f5',
       secondary: '#ffffff',
-      tertiary: "#1477AE",
+      tertiary: "#D9DCE7",
     },
     text: {
       primary: '#050505',
@@ -22,8 +22,8 @@ const light = {
     dropShadow: {
       primary: '#bbb2e9' //maximum blue purple
     },
-    bgImages: {
-
+    accent: {
+      primary: "#1477AE"
     },
     error: {
       primary: "red"

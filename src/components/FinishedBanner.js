@@ -3,13 +3,13 @@ import '../styles/components/FinishedBanner.css'
 
 const BannerContainer = styled.div`
     background-color: ${props => props.theme.bg.primary};
-    border: 1px solid ${props => props.theme.bg.primary};
 `
 
 const Banner = styled.div`
-    background-color: ${props => props.theme.bg.tertiary};
+    background-color: ${props => props.theme.accent.primary};
     color: ${props => props.theme.header.secondary};
     border: 1px solid ${props => props.theme.bg.primary};
+    filter: drop-shadow(0 0 0.25rem ${props => props.theme.dropShadow.primary});
 `
 
 const FinishedBanner = () => {

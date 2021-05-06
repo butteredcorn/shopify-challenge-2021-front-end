@@ -9,7 +9,7 @@ const SearchBarContainer = styled.section`
 
 const SearchBarInner = styled.section`
     background-color: ${props => props.theme.bg.secondary};
-    border: 1px solid ${props => props.theme.bg.primary};
+    border: 1px solid ${props => props.theme.bg.tertiary};
 `
 
 const Search = styled.span`

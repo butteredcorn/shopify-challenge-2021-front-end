@@ -9,7 +9,7 @@ import Error from './Error'
 const NominationsContainer = styled.div`
     background-color: ${props => props.theme.bg.secondary};
     color: ${props => props.theme.text.secondary};
-    border: 1px solid ${props => props.theme.bg.primary};
+    border: 1px solid ${props => props.theme.bg.tertiary};
 `
 
 const SubHeader = styled.h3`
