@@ -58,7 +58,7 @@ const Home = ({nominations, addNomination, removeNomination}) => {
             <MainHeader/>
             {nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS && <FinishedBanner/>}
             <SearchBar input={input.keyword} setInput={handleUserInput} handleEvent={handleEvent}/>
-            <MainSection className="main-section">
+            <MainSection className="home-main-section">
                 <GetMoviesByTitle keyword={input.searchTerm} loading={loading} error={err} setError={setErr} data={movies} nominate={addNomination} nominations={nominations}/>
                 <NominationsList data={nominations} remove={removeNomination} error={err} setError={setErr} />
             </MainSection>

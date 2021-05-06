@@ -38,7 +38,7 @@ const MovieDetails = ({addNomination, removeNomination}) => {
     return (
         <MovieDetailsContainer className="movie-details-container">
             <MainHeader/>
-            <MainSection className="main-section">
+            <MainSection className="movie-details-main-section">
                 <GetMoviesByID error={err} setError={setErr} loading={loading} movie={movie} nominate={addNomination} remove={removeNomination}/>
             </MainSection>
         </MovieDetailsContainer>

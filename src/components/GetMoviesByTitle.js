@@ -7,8 +7,12 @@ import Error from './Error'
 
 const MoviesContainer = styled.div`
     background-color: ${props => props.theme.bg.secondary};
-    color: ${props => props.theme.text.tertiary};
+    color: ${props => props.theme.text.secondary};
     border: 1px solid ${props => props.theme.bg.primary};
+`
+
+const SubHeader = styled.h3`
+    color: ${props => props.theme.header.primary};
 `
 
 const GetMoviesByTitle = ({keyword, loading, error, setError, data, nominate, nominations}) => {
@@ -19,13 +23,13 @@ const GetMoviesByTitle = ({keyword, loading, error, setError, data, nominate, no
         return false
     }
 
-    if (loading) return <MoviesContainer className="container"><p>Loading ...</p></MoviesContainer>;
+    if (loading) return <MoviesContainer className="movies-container"><p>Loading ...</p></MoviesContainer>;
     if (error) {
         console.log(error.message)
         return (
-            <MoviesContainer className="container">
+            <MoviesContainer className="movies-container">
                 <div>
-                    <h3 className="heading">Results</h3>
+                    <SubHeader className="heading">Results</SubHeader>
                     <Error message={error.message}/>
                 </div>
             </MoviesContainer>
@@ -33,9 +37,9 @@ const GetMoviesByTitle = ({keyword, loading, error, setError, data, nominate, no
     }
 
     return (
-        <MoviesContainer className="container">
-            {data && data.length > 0 && <div>
-                {data.length > 1 ? <h3 className="heading">{data.length} Results for "{keyword}"</h3> : <h3 className="heading">{data.length} Result for "{keyword}"</h3>}
+        <MoviesContainer className="movies-container">
+            {data && data.length > 0 && <div className="movies-container-inner">
+                {data.length > 1 ? <SubHeader className="heading">{data.length} Results for "{keyword}"</SubHeader> : <SubHeader className="heading">{data.length} Result for "{keyword}"</SubHeader>}
                 <ul className="movies">
                 {data.map((movie) => 
                     <li className="movie" key={movie.imdbID}><Link to={{pathname: "/movie", state: {id: movie.imdbID}}}>{movie.Title}</Link> <span>({movie.Year})</span> <span>{movie.imdbID && !nominated(movie.imdbID) && <button onClick={() => nominate({Title: movie.Title, Year: movie.Year, imdbID: movie.imdbID}, error, setError)}>Nominate</button>}</span></li>
@@ -43,7 +47,7 @@ const GetMoviesByTitle = ({keyword, loading, error, setError, data, nominate, no
                 </ul>
             </div>}
             {data && data.length === 0 && <div>
-                <h3 className="heading">Results</h3>
+                <SubHeader className="heading">Results</SubHeader>
                 <p>Movie results will show here after you search.</p>
             </div>}
         </MoviesContainer>

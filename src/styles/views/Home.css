@@ -3,17 +3,32 @@
     max-width: 1200px; 
 }
 
-.home-container > * {
-    margin: 1rem;
-}
-
-.main-section {
+.home-main-section {
     display: flex;
     align-items: flex-start;
 }
 
-.main-section > * {
+.home-main-section > * {
     margin: 1rem;
     width: 50%;
 }
 
+@media only screen and (max-width: 600px) {
+
+    .home-container {
+        width: 100%;
+        max-width: unset; 
+    }
+
+    .home-main-section {
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: column;
+    }
+
+    .home-main-section > * {
+        width: unset;
+    }
+
+
+}

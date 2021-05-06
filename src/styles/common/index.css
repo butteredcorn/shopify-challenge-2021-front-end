@@ -1,5 +1,10 @@
-* {
-  transition: all 0.5s ease-in;
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
 }
 
 body {
@@ -18,4 +23,11 @@ ul {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media only screen and (max-width: 600px) {
+    
+  * {
+    font-size: 14px;
+  }
 }

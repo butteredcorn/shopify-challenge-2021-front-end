@@ -1,13 +1,7 @@
-.container {
+.nominations-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 1rem;
-}
-
-.container > * {
-    width: 100%;
 }
 
 .heading {
@@ -27,4 +21,15 @@
 
 .nomination > * {
     padding-right: 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .nominations {
+        list-style: none;
+    }
+
+    .nomination > * {
+        padding-right: 0;
+    }
 }

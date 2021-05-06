@@ -7,8 +7,12 @@ import Error from './Error'
 
 const MovieContainer = styled.div`
     background-color: ${props => props.theme.bg.secondary};
-    color: ${props => props.theme.text.tertiary};
+    color: ${props => props.theme.text.secondary};
     border: 1px solid ${props => props.theme.bg.primary};
+`
+
+const MovieTitle = styled.h2`
+    color: ${props => props.theme.header.primary};
 `
 
 const GetMoviesByID = ({error, setError, loading, movie, nominate, remove}) => {
@@ -25,11 +29,11 @@ const GetMoviesByID = ({error, setError, loading, movie, nominate, remove}) => {
         }
     }, [movie.imdbID])
 
-    if (loading) return <MovieContainer className="container"><p>Loading ...</p></MovieContainer>;;
+    if (loading) return <MovieContainer className="movie-container"><p>Loading ...</p></MovieContainer>;;
     if (error) {
         console.log(error.message)
         return (
-            <MovieContainer className="container">
+            <MovieContainer className="movie-container">
                 <div>
                     <Error message={error.message}/>
                 </div>
@@ -38,12 +42,12 @@ const GetMoviesByID = ({error, setError, loading, movie, nominate, remove}) => {
     }
 
     return (
-        <MovieContainer className="container">
+        <MovieContainer className="movie-container">
             {movie && 
             <div>
-                <h2 className="movie-title">{movie.Title} ({movie.Year})</h2>
-                <div className="movie-container">
-                    <div>
+                <MovieTitle className="movie-title">{movie.Title} ({movie.Year})</MovieTitle>
+                <div className="movie-detail-container">
+                    <div className="poster-container">
                         <img className="poster" src={movie.Poster} alt="movie poster"/>
                     </div>
                     <div className="movie-details">

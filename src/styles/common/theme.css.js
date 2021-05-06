@@ -3,7 +3,7 @@ const light = {
     bg: {
       primary: '#eff0f5',
       secondary: '#ffffff',
-      tertiary: "#ffffff",
+      tertiary: "#1477AE",
     },
     text: {
       primary: '#050505',
@@ -14,7 +14,7 @@ const light = {
     },
     header: {
       primary: '#0C4767', //indigo dye
-      secondary: '#0F5880'
+      secondary: 'white'
     },
     textShadow: {
       primary: '#ffffff' 
@@ -34,8 +34,8 @@ const light = {
     id: "dark",
     bg: {
       primary: '#050505',
-      secondary: '#111111',
-      tertiary: "#BFC4C4",
+      secondary: '#474747',
+      tertiary: "#988ADE",
     },
     text: {
       primary: '#fbfbfc',
@@ -45,8 +45,8 @@ const light = {
       placeholder: 'rgba(145,148,161,0.5)',
     },
     header: {
-      primary: '#fbfbfc',
-      secondary: '#bbb2e9'
+      primary: '#bbb2e9',
+      secondary: '#fbfbfc'
     },
     textShadow: {
       primary: '#663399' //rebecca purple

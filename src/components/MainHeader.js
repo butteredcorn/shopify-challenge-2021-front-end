@@ -6,7 +6,7 @@ import '../styles/components/MainHeader.css'
 
 const MainHeaderContainer = styled.section`
     background-color: ${props => props.theme.bg.primary};
-    color: ${props => props.theme.text.tertiary};
+    color: ${props => props.theme.header.primary};
     border: 1px solid ${props => props.theme.bg.primary};
 `
 

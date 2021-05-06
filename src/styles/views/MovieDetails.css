@@ -7,12 +7,12 @@
     margin: 1rem;
 }
 
-.main-section {
+.movie-details-main-section {
     display: flex;
     align-items: flex-start;
 }
 
-.main-section > * {
+.movie-details-main-section > * {
     margin: 1rem;
     width: 100%;
 }

@@ -8,8 +8,12 @@ import Error from './Error'
 
 const NominationsContainer = styled.div`
     background-color: ${props => props.theme.bg.secondary};
-    color: ${props => props.theme.text.tertiary};
+    color: ${props => props.theme.text.secondary};
     border: 1px solid ${props => props.theme.bg.primary};
+`
+
+const SubHeader = styled.h3`
+    color: ${props => props.theme.header.primary};
 `
 
 const NominationsList = ({loading, error, setError, data, remove}) => {
@@ -19,9 +23,9 @@ const NominationsList = ({loading, error, setError, data, remove}) => {
     if (error) {
         console.log(error.message)
         return (
-            <NominationsContainer className="container">
+            <NominationsContainer className="nominations-container">
                 <div>
-                    <h3 className="heading">Nominations</h3>
+                    <SubHeader className="heading">Nominations</SubHeader>
                     <Error message={error.message}/>
                 </div>
             </NominationsContainer>
@@ -29,9 +33,9 @@ const NominationsList = ({loading, error, setError, data, remove}) => {
     }
 
     return (
-        <NominationsContainer className="container">
-            <div>
-                <h3 className="heading">Nominations</h3>
+        <NominationsContainer className="nominations-container">
+            {/* <div> */}
+                <SubHeader className="heading">Nominations</SubHeader>
                 {data && data.length > 0 && 
                 <ul className="nominations">
                     {data.map((nomination) => 
@@ -40,7 +44,7 @@ const NominationsList = ({loading, error, setError, data, remove}) => {
                 </ul>}
                 {data && data.length === 0 &&
                 <p>No Nominations Yet! Nominate some movies to get started.</p>}
-            </div>
+            {/* </div> */}
         </NominationsContainer>
     )
 }

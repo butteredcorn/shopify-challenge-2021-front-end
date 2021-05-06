@@ -1,25 +1,28 @@
-.container {
+.movie-container {
     padding: 1.5rem;
 }
 
 .movie-title {
     font-size: 2.5rem;
+    font-weight: bold;
     margin-top: 0rem;
     margin-bottom: 1rem;
 }
 
-.poster {
-    max-width: 400px;
-}
-
-.movie-container {
+.movie-detail-container {
     display: flex;
     flex-direction: row;
 }
 
-.movie-container :first-child {
-    margin-right: 1rem;
+.poster-container {
+    margin-right: 1.5rem;
 }
+
+.poster {
+    margin-right: 0;
+    max-width: 20rem;
+}
+
 
 .movie-details {
     display: flex;
@@ -29,4 +32,29 @@
 
 .movie-details > * {
     padding-bottom: 0.5rem;
+    display: flex;
+}
+
+strong {
+    min-width: 8rem;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .poster-container {
+        margin: 0;
+    }
+
+    .poster {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .movie-container {
+        flex-direction: column;
+    }
+
+    .movie-title {
+        font-size: 1.8rem;
+    }
 }
