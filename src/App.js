@@ -19,7 +19,7 @@ function App({props}) {
 
   const addNomination = (nomination, err, setErr)  => {
     if (err) setErr(null)
-    if (nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS) return setErr(new Error(`You can only nominate ${process.env.REACT_APP_MAX_NOMINATIOINS} movies.`))
+    if (nominations && nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS) return setErr(new Error(`You can only nominate ${process.env.REACT_APP_MAX_NOMINATIOINS} movies.`))
     if (nominations && nominations.filter(n => n.imdbID === nomination.imdbID).length > 0) return;
     const updatedNominations = [...nominations, nomination]
     setNominations(updatedNominations)
@@ -34,7 +34,8 @@ function App({props}) {
   }
 
   useEffect(() => {
-    const nominations = JSON.parse(localStorage.getItem("nominations"))
+    const stored = JSON.parse(localStorage.getItem("nominations"))
+    const nominations = stored ? stored : []
     setNominations(nominations)
 }, [])
 
