@@ -18,7 +18,7 @@ function App({props}) {
   const [nominations, setNominations] = useState([])
 
   const addNomination = (nomination, err, setErr)  => {
-    if (err) setErr(null)
+    if (err) setErr(false)
     if (nominations && nominations.length >= process.env.REACT_APP_MAX_NOMINATIOINS) return setErr(new Error(`You can only nominate ${process.env.REACT_APP_MAX_NOMINATIOINS} movies.`))
     if (nominations && nominations.filter(n => n.imdbID === nomination.imdbID).length > 0) return;
     const updatedNominations = [...nominations, nomination]
@@ -27,7 +27,7 @@ function App({props}) {
   }
 
   const removeNomination = (id, err, setErr) => {
-    if (err) setErr(null)
+    if (err) setErr(false)
     const updatedNominations = nominations.filter(n => n.imdbID !== id)
     setNominations(updatedNominations)
     localStorage.setItem("nominations", JSON.stringify(updatedNominations))

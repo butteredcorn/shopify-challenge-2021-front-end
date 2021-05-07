@@ -27,14 +27,15 @@ const Home = ({nominations, addNomination, removeNomination}) => {
     const [input, setInput] = useState({keyword: "", searchTerm: ""})
     const [getMoviesByTitle, { error, loading, data }] = useLazyQuery(GET_MOVIES_BY_TITLE);    
     const [movies, setMovies] = useState([])
-    const [err, setErr] = useState(null)
+    const [err, setErr] = useState(false)
 
     const handleUserInput = (e) => {
+        if(err) setErr(false);
         setInput({...input, [e.target.name]: e.target.value})
     }
 
     const handleEvent = (e) => {
-        if(err) setErr(null)
+        if(err) setErr(false)
         if (e.key === "Enter" || e.type === "click") {
             setInput({...input, searchTerm: input.keyword})
             getMoviesByTitle({variables: {title: input.keyword}})
@@ -51,7 +52,7 @@ const Home = ({nominations, addNomination, removeNomination}) => {
 
     useEffect(() => {
         if (error) setErr(error)
-    }, [error, err])
+    }, [error])
 
     return (
         <HomeContainer className="home-container">
