@@ -32,7 +32,7 @@ exports[`matches a snapshot 1`] = `
     className="sc-gsDJrp cGoqlV search-bar-container"
   >
     <section
-      className="sc-dkPtyc hBdwQl search-bar-inner"
+      className="sc-dkPtyc tngen search-bar-inner"
     >
       <label
         className="sc-eCImvq iMoTva search-bar-title"
@@ -63,7 +63,7 @@ exports[`matches a snapshot 1`] = `
     className="sc-crHlIS dShgku home-main-section"
   >
     <div
-      className="sc-gKckTs imZtZy movies-container"
+      className="sc-gKckTs gesfhU movies-container"
     >
       <div>
         <h3
@@ -77,7 +77,7 @@ exports[`matches a snapshot 1`] = `
       </div>
     </div>
     <div
-      className="sc-furvIG lcAKQw nominations-container"
+      className="sc-furvIG eCigAO nominations-container"
     >
       <h3
         className="sc-pVTma jKyYsN heading"

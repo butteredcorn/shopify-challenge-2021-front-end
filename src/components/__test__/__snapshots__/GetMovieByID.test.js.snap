@@ -2,7 +2,7 @@
 
 exports[`matches a loading snapshot 1`] = `
 <div
-  className="sc-gsDJrp dbPJRZ movie-container"
+  className="sc-gsDJrp jeaySH movie-container"
 >
   <p>
     Loading ...
@@ -12,7 +12,7 @@ exports[`matches a loading snapshot 1`] = `
 
 exports[`matches a snapshot 1`] = `
 <div
-  className="sc-gsDJrp dbPJRZ movie-container"
+  className="sc-gsDJrp jeaySH movie-container"
 >
   <div>
     <h2
